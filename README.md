@@ -61,6 +61,16 @@ npm install
 npm start
 ```
 
+##### API_URL
+
+Die Anwendung akzeptiert (optional) die Umgebungsvariable `API_URL`. Diese definiert, an welchen Endpunkt die REST-Schnittstelle aufgerufen wird.
+
+```bash
+API_URL=http://localhost:8080 npm start
+```
+
+Ohne Angabe von `API_URL` laufen die API-Anfragen über den gleichen Host wie die Frontend-Anwendung. => `http://localhost:1234/api`
+
 #### Anwendung öffnen im Browser:
 
 http://localhost:1234
@@ -75,3 +85,34 @@ npm start
 
 #### CORS
 
+```
+Access to fetch at 'http://localhost:8080/api/time/timezones' from origin 'http://localhost:1234' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+```
+
+Wenn die Umgebungsvariable `API_URL` angegeben wurde, muss die REST-Schnittstelle die `CORS`-Header setzen, um Anfragen anderer Domains zu akzeptieren.
+
+
+#### API-Anfragen weiterleiten (Proxy)
+
+Ohne Angabe von `API_URL` laufen die API-Anfragen über den gleichen Host wie die Frontend-Anwendung. => `http://localhost:1234/api`.
+
+Um alle Anfragen an `/api` an den REST-Endpunkt weiterzuleiten, kann das Tool [http-proxy-cli](https://github.com/foss-haas/http-proxy-cli) verwendet werden.
+
+Das Tool kann wie folgt installiert werden:
+
+```bash
+npm install -g http-proxy-cli
+```
+
+Danach kann der Proxy-Server mit folgender Konfiguration gestartet werden:
+
+```bash
+http-proxy -p 1235 /api=localhost:8080/api 1234
+```
+
+Beschreibung:
+
+Wir gehen davon aus, dass das Backend auf `localhost:8080` hört.
+
+Der Proxy-Server wird auf Port `1235` gestartet und leitet alle Anfragen an Port `1234` weiter.
+Desweiteren werden alle Anfragen an `/api` nach `localhost:8080/api` weitergeleitet.

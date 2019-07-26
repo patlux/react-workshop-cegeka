@@ -2,7 +2,7 @@ import React from 'react';
 
 import Accordion from './Accordion';
 
-function Timezones() {
+function Timezones({ apiUrl = '' }) {
   const [timezones, setTimezones] = React.useState([]); // ["Asia/Aden", "America/Cuiaba", "Europe/Berlin"]
   const [times, setTimes] = React.useState([]); // ["", "2019-07-19T12:23:27.174031", ""]
 
@@ -14,11 +14,11 @@ function Timezones() {
   }, []);
 
   function fetchTimezones() {
-    return fetch(`/api/time/timezones`).then(response => response.json());
+    return fetch(`${apiUrl}/api/time/timezones`).then(response => response.json());
   }
 
   function fetchCurrentTimeForTimezone(timezone) {
-    return fetch(`/api/time/current`, {
+    return fetch(`${apiUrl}/api/time/current`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
