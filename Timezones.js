@@ -7,17 +7,20 @@ function Timezones({ apiUrl = '' }) {
   const [times, setTimes] = React.useState([]); // ["", "2019-07-19T12:23:27.174031", ""]
 
   React.useEffect(() => {
-    fetchTimezones().then(timezones => {
-      setTimezones(timezones);
-      setTimes(new Array(timezones.length).fill(''));
-    });
+    fetchAndSetTimezones();
   }, []);
 
-  function fetchTimezones() {
+  async function fetchAndSetTimezones() {
+    const timezones = await fetchTimezones();
+    setTimezones(timezones);
+    setTimes(new Array(timezones.length).fill(''));
+  }
+
+  async function fetchTimezones() {
     return fetch(`${apiUrl}/api/time/timezones`).then(response => response.json());
   }
 
-  function fetchCurrentTimeForTimezone(timezone) {
+  async function fetchCurrentTimeForTimezone(timezone) {
     return fetch(`${apiUrl}/api/time/current`, {
       method: 'POST',
       headers: {
@@ -31,17 +34,17 @@ function Timezones({ apiUrl = '' }) {
       .then(responseJson => responseJson.currentTime);
   }
 
-  function onOpenIndexChange(openIndex) {
+  async function onOpenIndexChange(openIndex) {
     const timezone = timezones[openIndex];
-    fetchCurrentTimeForTimezone(timezone).then(currentTime => {
-      const index = timezones.indexOf(timezone);
-      setTimes(
-        times
-          .slice(0, index)
-          .concat(currentTime)
-          .concat(times.slice(index + 1)),
-      );
-    });
+    const currentTime = await fetchCurrentTimeForTimezone(timezone);
+
+    const index = timezones.indexOf(timezone);
+    setTimes(
+      times
+        .slice(0, index)
+        .concat(currentTime)
+        .concat(times.slice(index + 1)),
+    );
   }
 
   return (
