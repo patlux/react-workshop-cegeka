@@ -1,4 +1,4 @@
-# React Basics Cegeka Workshop
+# React Basics Cegeka Workshop [![CircleCI](https://circleci.com/gh/patlux/react-workshop-cegeka.svg?style=svg)](https://circleci.com/gh/patlux/react-workshop-cegeka)
 
 ## Willkommen
 
@@ -70,3 +70,8 @@ http://localhost:1234
 ```bash
 npm start
 ```
+
+## Troubleshooting
+
+#### CORS
+
