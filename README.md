@@ -1,4 +1,4 @@
-# React Basics Cegeka Workshop [![CircleCI](https://circleci.com/gh/patlux/react-workshop-cegeka.svg?style=svg)](https://circleci.com/gh/patlux/react-workshop-cegeka)
+# React Basics Cegeka Workshop [![CircleCI](https://circleci.com/gh/patlux/react-workshop-cegeka.svg?style=svg&circle-token=26dad7dcf2b6ed73116c4a6cb9b1ba7980607e5f)](https://circleci.com/gh/patlux/react-workshop-cegeka)
 
 ## Willkommen
 
