@@ -1,0 +1,16 @@
+.accordion-item {
+  border: 1px solid #eee;
+  padding: 2px;
+  margin-bottom: 5px;
+}
+
+.accordion-title {
+  background-color: #eee;
+  width: 100%;
+  text-align: left;
+}
+
+.accordion-content {
+  background-color: #eee;
+  padding: 10px;
+}
