@@ -1,4 +1,4 @@
-# React Basics Cegeka Workshop ![Node CI](https://github.com/patlux/react-workshop-cegeka/workflows/Node%20CI/badge.svg) [![CircleCI](https://circleci.com/gh/patlux/react-workshop-cegeka.svg?style=svg&circle-token=26dad7dcf2b6ed73116c4a6cb9b1ba7980607e5f)](https://circleci.com/gh/patlux/react-workshop-cegeka)
+# React Basics Cegeka Workshop ![Node CI](https://github.com/patlux/react-workshop-cegeka/workflows/Node%20CI/badge.svg)
 
 ## Willkommen
 
