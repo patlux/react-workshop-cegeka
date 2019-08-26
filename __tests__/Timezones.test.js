@@ -15,8 +15,7 @@ test('should show the title', async () => {
     });
   });
 
-  const { getByText, findByText } = render(<Timezones />);
-  expect(getByText('React Basics Cegeka Workshop')).toBeInTheDocument();
+  const { findByText } = render(<Timezones />);
 
   const element = await findByText("Europe/Berlin")
   expect(element).toBeDefined();

@@ -17,11 +17,11 @@ function Timezones({ apiUrl = '' }) {
   }
 
   async function fetchTimezones() {
-    return fetch(`${apiUrl}/api/time/timezones`).then(response => response.json());
+    return fetch(`${apiUrl}/time/timezones`).then(response => response.json());
   }
 
   async function fetchCurrentTimeForTimezone(timezone) {
-    return fetch(`${apiUrl}/api/time/current`, {
+    return fetch(`${apiUrl}/time/current`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -34,22 +34,25 @@ function Timezones({ apiUrl = '' }) {
       .then(responseJson => responseJson.currentTime);
   }
 
-  async function onOpenIndexChange(openIndex) {
-    const timezone = timezones[openIndex];
-    const currentTime = await fetchCurrentTimeForTimezone(timezone);
-
-    const index = timezones.indexOf(timezone);
+  function setTimeAt(index, time) {
     setTimes(
       times
         .slice(0, index)
-        .concat(currentTime)
+        .concat(time)
         .concat(times.slice(index + 1)),
     );
   }
 
+  async function onOpenIndexChange(openIndex) {
+    const timezone = timezones[openIndex];
+    const currentTime = await fetchCurrentTimeForTimezone(timezone);
+    const index = timezones.indexOf(timezone);
+    setTimeAt(index, currentTime);
+  }
+
   return (
     <div>
-      <h1>React Basics Cegeka Workshop</h1>
+      <h2>Timezones</h2>
       <Accordion
         items={timezones.map((timezone, index) => {
           return {
