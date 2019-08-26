@@ -3,8 +3,7 @@ module.exports = {
     '\\.(js)?$': 'babel-jest',
   },
   setupFilesAfterEnv: [
-    '@testing-library/jest-dom/extend-expect',
-    '@testing-library/react/cleanup-after-each',
+    '@testing-library/jest-dom/extend-expect'
   ],
   testPathIgnorePatterns: ['/node_modules/'],
   moduleNameMapper: {
