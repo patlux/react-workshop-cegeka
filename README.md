@@ -37,7 +37,7 @@ Der Ordner wird leer sein. Keine Sorge, das ist Absicht. :)
 
 ### Schritt wechseln
 
-Dadurch dass der Workshop in einzelne Schritt aufgeteilt ist, wird es nötig sein, dass du nach erfolgreichen Absolvieren des aktuellen Schrittes zum nächsten Schritt wechseln solltest.
+Der Workshop ist in einzelne Schritt aufgeteilt, dadurch wird es nötig sein, dass nach erfolgreichen Absolvieren eines Schrittes, du zum nächsten Schritt wechseln musst.
 
 Um zum Beispiel von Schritt 1. zu Schritt 2. zu gelangen, führe folgenden Befehl auf deiner Konsole aus:
 
