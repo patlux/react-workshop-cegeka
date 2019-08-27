@@ -3,5 +3,6 @@
     "env": {
       "API_URL": "@rwc-api-url"
     }
-  }
+  },
+  "routes": [{ "src": "/(.*)", "dest": "/" }]
 }
