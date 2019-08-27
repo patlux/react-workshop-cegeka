@@ -1,5 +1,7 @@
 # React Basics Cegeka Workshop ![Node CI](https://github.com/patlux/react-workshop-cegeka/workflows/Node%20CI/badge.svg)
 
+[Live Demo](https://react-workshop-cegeka.patwoz.now.sh/)
+
 ## Willkommen
 
 In diesem Workshop werden wir folgendes zusammen lernen:
@@ -71,6 +73,13 @@ API_URL=http://localhost:8080 npm start
 
 Ohne Angabe von `API_URL` laufen die API-Anfragen über den gleichen Host wie die Frontend-Anwendung. => `http://localhost:1234/api`
 
+**Wichtig**: Das Build-Tool cached die kompilierten Dateien nach `public/` und bekommt daher nichts von den Änderungen an der übergebenen `API_URL` mit. D.h. der Ordner `public/` muss vorher gelöscht werden, damit das Caching nicht wirkt.
+
+```bash
+rm -rf public/
+API_URL=http://localhost:8080 npm start
+```
+
 #### Anwendung öffnen im Browser:
 
 http://localhost:1234
@@ -96,7 +105,7 @@ Wenn die Umgebungsvariable `API_URL` angegeben wurde, muss die REST-Schnittstell
 
 Ohne Angabe von `API_URL` laufen die API-Anfragen über den gleichen Host wie die Frontend-Anwendung. => `http://localhost:1234/api`.
 
-Um alle Anfragen an `/api` an den REST-Endpunkt weiterzuleiten, kann das Tool [http-proxy-cli](https://github.com/foss-haas/http-proxy-cli) verwendet werden.
+Um alle Anfragen die an `/api` gehen, weiterzuleiten, kann das Tool [http-proxy-cli](https://github.com/foss-haas/http-proxy-cli) verwendet werden.
 
 Das Tool kann wie folgt installiert werden:
 
@@ -112,7 +121,7 @@ http-proxy -p 1235 /api=localhost:8080/api 1234
 
 Beschreibung:
 
-Wir gehen davon aus, dass das Backend auf `localhost:8080` hört.
+Wir gehen davon aus, dass das Backend auf `localhost:8080` läuft.
 
-Der Proxy-Server wird auf Port `1235` gestartet und leitet alle Anfragen an Port `1234` weiter.
-Desweiteren werden alle Anfragen an `/api` nach `localhost:8080/api` weitergeleitet.
+Der Proxy-Server wird auf Port `1235` gestartet und leitet alle Anfragen (außer an `/api`) an Port `1234` weiter.
+Alle Anfragen an `/api` werden nach `localhost:8080/api` weitergeleitet.
