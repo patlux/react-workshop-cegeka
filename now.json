@@ -4,5 +4,5 @@
       "API_URL": "@rwc-api-url"
     }
   },
-  "routes": [{ "src": "/(.*)", "dest": "/" }]
+  "routes": [{ "src": "/timezones", "dest": "/" }]
 }
