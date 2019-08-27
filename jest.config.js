@@ -7,6 +7,6 @@ module.exports = {
   ],
   testPathIgnorePatterns: ['/node_modules/'],
   moduleNameMapper: {
-    "\\.(css)$": "<rootDir>/__mocks__/styleMock.js"
+    "\\.(css)$": "<rootDir>/src/__mocks__/styleMock.js"
   }
 }
