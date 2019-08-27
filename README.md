@@ -6,9 +6,14 @@
 
 In diesem Workshop werden wir folgendes zusammen lernen:
 
-- Aufsetzen eines neuen Projekts mit [npm](https://www.npmjs.com/)
-- Abhängigkeiten wie z.B. `react` mit `npm` installieren
-- Die Basics von [React](https://reactjs.org/): Components, JSX, Props & State, Event-Handling
+- Projekt aufsetzen mit [create-react-app](https://github.com/facebook/create-react-app)
+- Grundlegende [React](https://reactjs.org/)-Kenntnisse:
+- - Components
+- - JSX
+- - Props
+- - State & Hooks
+- - Event-Handling
+- - Hooks
 - Anbindung einer REST-Schnittstelle
 - Testing
 
@@ -99,7 +104,6 @@ Access to fetch at 'http://localhost:8080/api/time/timezones' from origin 'http:
 ```
 
 Wenn die Umgebungsvariable `API_URL` angegeben wurde, muss die REST-Schnittstelle die `CORS`-Header setzen, um Anfragen anderer Domains zu akzeptieren.
-
 
 #### API-Anfragen weiterleiten (Proxy)
 
