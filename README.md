@@ -119,3 +119,5 @@ Um alle Anfragen die an `/api` gehen, an einen anderen Endpunkt weiterzuleiten, 
 ```
 
 Mit dem o.g. Eintrag werden alle Anfragen an `/api` nach `https://api.example.com` weitergeleitet.
+
+Siehe [hier](https://create-react-app.dev/docs/proxying-api-requests-in-development).
