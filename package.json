@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "parcel index.html -d public",
-    "build": "parcel build index.html -d public"
+    "dev": "parcel index.html -d public",
+    "build": "parcel build index.html -d public",
+    "start": "serve -s public"
   },
   "keywords": [
     "cegeka",

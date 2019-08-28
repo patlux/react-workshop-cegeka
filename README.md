@@ -62,6 +62,18 @@ Oder wähle in deiner git-Oberfläche den Wechsel zum jeweiligen Schritt durch.
 npm install
 ```
 
+#### Entwicklungsmodus starten:
+
+```bash
+npm run dev
+```
+
+#### Anwendung kompilieren:
+
+```bash
+npm run build
+```
+
 #### Anwendung starten:
 
 ```bash
