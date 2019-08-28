@@ -68,76 +68,50 @@ npm install
 npm run dev
 ```
 
+> Falls sich der Browser nicht automatisch öffnet, kannst du die Adresse http://localhost:3000 manuell aufrufen
+
 #### Anwendung kompilieren:
 
 ```bash
 npm run build
 ```
 
-#### Anwendung starten:
+#### Server für die kompilierte Anwendung starten:
+
+> Die Anwendung muss vorher mittels `npm run build` kompiliert werden
 
 ```bash
 npm start
 ```
 
-##### API_URL
+##### REACT_APP_API_URL
 
-Die Anwendung akzeptiert (optional) die Umgebungsvariable `API_URL`. Diese definiert, an welchen Endpunkt die REST-Schnittstelle aufgerufen wird.
-
-```bash
-API_URL=http://localhost:8080 npm start
-```
-
-Ohne Angabe von `API_URL` laufen die API-Anfragen über den gleichen Host wie die Frontend-Anwendung. => `http://localhost:1234/api`
-
-**Wichtig**: Das Build-Tool cached die kompilierten Dateien nach `public/` und bekommt daher nichts von den Änderungen an der übergebenen `API_URL` mit. D.h. der Ordner `public/` muss vorher gelöscht werden, damit das Caching nicht wirkt.
+Die Anwendung akzeptiert (optional) die Umgebungsvariable `REACT_APP_API_URL`. Diese definiert, an welchen Endpunkt die REST-Schnittstelle aufgerufen wird.
 
 ```bash
-rm -rf public/
-API_URL=http://localhost:8080 npm start
+REACT_APP_API_URL=http://localhost:8080 npm start
 ```
 
-#### Anwendung öffnen im Browser:
-
-http://localhost:1234
-
-#### Tests starten:
-
-```bash
-npm start
-```
+Ohne Angabe von `REACT_APP_API_URL` laufen die API-Anfragen über den gleichen Host wie die Frontend-Anwendung. => `http://localhost:3000/api`
 
 ## Troubleshooting
 
 #### CORS
 
 ```
-Access to fetch at 'http://localhost:8080/api/time/timezones' from origin 'http://localhost:1234' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+Access to fetch at 'http://localhost:8080/api/time/timezones' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
 ```
 
-Wenn die Umgebungsvariable `API_URL` angegeben wurde, muss die REST-Schnittstelle die `CORS`-Header setzen, um Anfragen anderer Domains zu akzeptieren.
+Wenn die Umgebungsvariable `REACT_APP_API_URL` angegeben wurde, muss die REST-Schnittstelle die `CORS`-Header setzen, um Anfragen anderer Domains zu akzeptieren.
 
 #### API-Anfragen weiterleiten (Proxy)
 
-Ohne Angabe von `API_URL` laufen die API-Anfragen über den gleichen Host wie die Frontend-Anwendung. => `http://localhost:1234/api`.
+Ohne Angabe von `REACT_APP_API_URL` laufen die API-Anfragen über den gleichen Host wie die Frontend-Anwendung. => `http://localhost:3000/api`.
 
-Um alle Anfragen die an `/api` gehen, weiterzuleiten, kann das Tool [http-proxy-cli](https://github.com/foss-haas/http-proxy-cli) verwendet werden.
+Um alle Anfragen die an `/api` gehen, an einen anderen Endpunkt weiterzuleiten, kann ein Eintrag in die `package.json` hinzugefügt werden. Hierzu einfach wie folgt vorgehen:
 
-Das Tool kann wie folgt installiert werden:
-
-```bash
-npm install -g http-proxy-cli
+```diff
++  "proxy": "https://api.example.com",
 ```
 
-Danach kann der Proxy-Server mit folgender Konfiguration gestartet werden:
-
-```bash
-http-proxy -p 1235 /api=localhost:8080/api 1234
-```
-
-Beschreibung:
-
-Wir gehen davon aus, dass das Backend auf `localhost:8080` läuft.
-
-Der Proxy-Server wird auf Port `1235` gestartet und leitet alle Anfragen (außer an `/api`) an Port `1234` weiter.
-Alle Anfragen an `/api` werden nach `localhost:8080/api` weitergeleitet.
+Mit dem o.g. Eintrag werden alle Anfragen an `/api` nach `https://api.example.com` weitergeleitet.

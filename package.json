@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "dev": "parcel index.html -d public",
-    "build": "parcel build index.html -d public",
-    "start": "serve -s public"
+    "dev": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start": "serve -s build/"
   },
   "keywords": [
     "cegeka",
@@ -17,22 +18,32 @@
   "author": "Patrick Wozniak <patrick.wozniak@cegeka.de>",
   "license": "MIT",
   "dependencies": {
-    "@babel/runtime": "^7.5.5",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-scripts": "3.1.1",
     "serve": "^11.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
-    "@babel/plugin-transform-runtime": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-react": "^7.0.0",
     "@testing-library/jest-dom": "^4.1.0",
-    "@testing-library/react": "^9.1.3",
-    "babel-jest": "^24.9.0",
-    "jest": "^24.9.0",
-    "parcel-bundler": "^1.12.3"
+    "@testing-library/react": "^9.1.3"
   },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "https://spring-boot-demo-api.herokuapp.com",
   "engines": {
     "node": "10.x"
   }

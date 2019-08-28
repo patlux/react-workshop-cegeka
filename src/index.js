@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Timezones from './src/Timezones';
+import Timezones from './Timezones';
 
 function App({ apiUrl }) {
   const path = window.location.pathname;
@@ -28,5 +28,5 @@ function App({ apiUrl }) {
   );
 }
 
-var mountNode = document.getElementById('app');
-ReactDOM.render(<App apiUrl={process.env.API_URL || '/api'} />, mountNode);
+var mountNode = document.getElementById('root');
+ReactDOM.render(<App apiUrl={process.env.REACT_APP_API_URL || '/api'} />, mountNode);
