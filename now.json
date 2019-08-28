@@ -1,8 +1,0 @@
-{
-  "build": {
-    "env": {
-      "API_URL": "@rwc-api-url"
-    }
-  },
-  "routes": [{ "src": "/timezones", "dest": "/" }]
-}

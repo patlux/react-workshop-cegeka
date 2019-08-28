@@ -1,6 +1,6 @@
 # React Basics Cegeka Workshop ![Node CI](https://github.com/patlux/react-workshop-cegeka/workflows/Node%20CI/badge.svg)
 
-[Live Demo](https://react-workshop-cegeka.patwoz.now.sh/)
+[Live Demo](https://react-demo-api.herokuapp.com/)
 
 ## Willkommen
 
