@@ -84,6 +84,10 @@ npm run build
 npm start
 ```
 
+## Environment variables
+
+Siehe [hier](https://create-react-app.dev/docs/adding-custom-environment-variables).
+
 ##### REACT_APP_API_URL
 
 Die Anwendung akzeptiert (optional) die Umgebungsvariable `REACT_APP_API_URL`. Diese definiert, an welchen Endpunkt die REST-Schnittstelle aufgerufen wird.
@@ -92,7 +96,7 @@ Die Anwendung akzeptiert (optional) die Umgebungsvariable `REACT_APP_API_URL`. D
 REACT_APP_API_URL=http://localhost:8080 npm start
 ```
 
-Ohne Angabe von `REACT_APP_API_URL` laufen die API-Anfragen über den gleichen Host wie die Frontend-Anwendung. => `http://localhost:3000/api`
+> Ohne Angabe von `REACT_APP_API_URL` laufen die API-Anfragen über den gleichen Host wie die Frontend-Anwendung. => `http://localhost:3000/api`
 
 ## Troubleshooting
 
