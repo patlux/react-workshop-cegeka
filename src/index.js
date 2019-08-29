@@ -29,4 +29,7 @@ function App({ apiUrl }) {
 }
 
 var mountNode = document.getElementById('root');
-ReactDOM.render(<App apiUrl={process.env.REACT_APP_API_URL || '/api'} />, mountNode);
+ReactDOM.render(
+  <App apiUrl={process.env.REACT_APP_API_URL || '/api'} />,
+  mountNode,
+);
