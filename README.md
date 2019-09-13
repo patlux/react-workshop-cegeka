@@ -33,27 +33,6 @@ npm --version
 
 Wenn du Probleme damit hast, dann schau dir am besten an, wie neue Einträge zur `PATH` hinzugefügt werden können für [Windows](https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/) oder [MacOS/Linux](http://stackoverflow.com/a/24322978/971592).
 
-## Setup
-
-```
-git clone -b step-01 https://github.com/patlux/react-workshop-cegeka.git
-cd react-workshop-cegeka
-```
-
-Der Ordner wird leer sein. Keine Sorge, das ist Absicht. :)
-
-### Schritt wechseln
-
-Der Workshop ist in einzelne Schritt aufgeteilt, dadurch wird es nötig sein, dass nach erfolgreichen Absolvieren eines Schrittes, du zum nächsten Schritt wechseln musst.
-
-Um zum Beispiel von Schritt 1. zu Schritt 2. zu gelangen, führe folgenden Befehl auf deiner Konsole aus:
-
-```
-git checkout step-02
-```
-
-Oder wähle in deiner git-Oberfläche den Wechsel zum jeweiligen Schritt durch.
-
 ## Project
 
 #### Abhängigkeiten installieren:
