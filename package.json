@@ -9,8 +9,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start": "serve -s build/",
-    "start:deck": "mdx-deck docs/slides.mdx --port 9900",
-    "build:deck": "mdx-deck build docs/slides.mdx",
+    "start:deck": "npx mdx-deck docs/slides.mdx --port 9900",
+    "build:deck": "npx mdx-deck build docs/slides.mdx",
     "export:deck": "npx mdx-deck-export pdf docs/slides.mdx"
   },
   "keywords": [
